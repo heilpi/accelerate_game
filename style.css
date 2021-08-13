@@ -20,9 +20,15 @@ canvas {
   border-radius: 0.5rem;
 }
 
-p {
+h1 {
+  color: #ffffff;
+  text-shadow: 3px 3px 5px #f875e7;
+  font-family: consolas;
+}
+.description {
   font-family: consolas;
   color: #ffffff;
+  /* text-align: center; */
 }
 html,
 body {
@@ -30,4 +36,8 @@ body {
   height: 100%;
   position: absolute;
   background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+}
+.container {
+  width: 412px;
+  margin: 50px auto;
 }
