@@ -27,6 +27,7 @@
             start: function () {
                 this.canvas.width = 480;
                 this.canvas.height = 270;
+                this.canvas.position = "absolute";
                 this.context = this.canvas.getContext("2d");
                 document.body.insertBefore(this.canvas, document.body.childNodes[0]);
                 this.frameNo = 0;
@@ -133,7 +134,7 @@
         }
     </script>
     <br>
-    <button onmousedown="accelerate(-0.2)" onmouseup="accelerate(0.05)">ACCELERATE</button>
+    <button class="button1" onmousedown="accelerate(-0.2)" onmouseup="accelerate(0.05)">accelerate</button>
     <p>Use the ACCELERATE button to stay in the air</p>
     <p>How long can you stay alive? &#128512</p>
 </body>
