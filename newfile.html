@@ -24,7 +24,7 @@
         var myScore;
 
         function startGame() {
-            myGamePiece = new component(40, 40, "&#128512", 10, 120,"text");
+            myGamePiece = new component(40, 40, "emoji1.jpg", 10, 120,"image");
             myGamePiece.gravity = 0.05;
             myScore = new component("30px", "Consolas", "black", 280, 40, "text");
             myGameArea.start();
@@ -35,7 +35,7 @@
             start: function () {
                 this.canvas.width = 480;
                 this.canvas.height = 270;
-                this.canvas.position = "absolute";
+                /* this.canvas.position = "absolute"; */
                 this.context = this.canvas.getContext("2d");
                 document.body.insertBefore(this.canvas, document.body.childNodes[0]);
                 this.frameNo = 0;
@@ -48,10 +48,14 @@
 
         function component(width, height, color, x, y, type) {
             this.type = type;
+            if (type == "image") {
+                this.image = new Image();
+                this.image.src = color;
+            }
             this.speedX = 0;
             this.speedY = 0;
             this.x = x;
-            this.type = type;
+            /* this.type = type; */
             this.score = 0;
             this.width = width;
             this.height = height;
@@ -67,6 +71,16 @@
                     ctx.font = this.width + " " + this.height;
                     ctx.fillStyle = color;
                     ctx.fillText(this.text, this.x, this.y);
+        
+                } else {
+                    ctx.fillStyle = color;
+                    ctx.fillRect(this.x, this.y, this.width, this.height);
+                }
+                if (type == "image") {
+                    ctx.drawImage(this.image,
+                        this.x,
+                        this.y,
+                        this.width, this.height);
                 } else {
                     ctx.fillStyle = color;
                     ctx.fillRect(this.x, this.y, this.width, this.height);
