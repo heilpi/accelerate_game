@@ -155,7 +155,17 @@
 
         function accelerate(n) {
             myGamePiece.gravity = n;
+            if (n > 0){
+                myGamePiece.image.src = "emoji2.jpg";
+            }
+            else{
+                myGamePiece.image.src = "emoji1.jpg"
+            }
+            
         }
+
+        
+
     </script>
     
 </body>
